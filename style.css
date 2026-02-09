@@ -426,7 +426,15 @@ nav a:hover{color:var(--cyan)}
 .blink{animation:blink 1s infinite}
 @keyframes blink{50%{opacity:0}}
 
-.btn{padding:12px 24px;margin:6px;border-radius:6px}
+.btn{
+  padding:12px 24px;
+  margin:6px;
+  border-radius:6px;
+  display:inline-block;
+  cursor:pointer;
+  transition: transform .18s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
 
 @media(max-width:480px){
   .btn{
@@ -460,6 +468,26 @@ nav a:hover{color:var(--cyan)}
 .btn.outline{
   border:1px solid #00b4ff;
   color:#00b4ff;
+}
+
+/* Hero button hover effects */
+.buttons .btn:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,170,255,0.12);
+}
+.btn.primary:hover{
+  background: linear-gradient(90deg,#00d7ff,#00aaff);
+  color:#001;
+  box-shadow: 0 14px 40px rgba(0,170,255,0.2);
+}
+.btn.outline:hover{
+  background: rgba(0,170,255,0.06);
+  color: #00d7ff;
+  border-color: #00d7ff;
+  box-shadow: 0 8px 24px rgba(0,170,255,0.08);
+}
+.btn:active{
+  transform: translateY(-1px) scale(.995);
 }
 
 .outline{
